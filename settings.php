@@ -44,10 +44,13 @@ if ($ADMIN->fulltree) {
     $settings->add(new admin_setting_configselect('local_numicon/icon',
         new lang_string('settings:icon', 'local_numicon'),
         new lang_string('settings:icon_desc', 'local_numicon'),
-        'square'), [
+        'square', [
             'fa-square' => 'Sqaure',
             'fa-circle' => 'Cirle'
-    ]);
+    ]));
 
-
+    $settings->add(new admin_setting_configtext('local_numicon/regex',
+        new lang_string('settings:regex', 'local_numicon'),
+        new lang_string('settings:regex_desc', 'local_numicon'),
+        "^(\\d*?)\\.\\s*(.*)"));
 }

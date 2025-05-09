@@ -31,3 +31,5 @@ $plugin->component = 'local_numicon';
 $plugin->release = '0.0.1';
 $plugin->version = 2025060803;
 $plugin->requires = 2022112800;
+$plugin->maturity = MATURITY_STABLE;
+$plugin->supported = [39, 405];

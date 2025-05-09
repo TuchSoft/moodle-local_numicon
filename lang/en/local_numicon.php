@@ -35,6 +35,8 @@ $string['settings:activity'] = 'Enable on activity\'s title';
 $string['settings:activity_desc'] = 'Enable the number to icon transformation on activity\'s title';
 $string['settings:icon'] = 'Icon';
 $string['settings:icon_desc'] = 'Background icon to use (square or circle)';
+$string['settings:regex'] = 'Regex';
+$string['settings:regex_desc'] = 'Do not touch if you don\'t know what you are doing. <br> Regex to match the number: $1 = number, $2 = rest of the title';
 
 
 

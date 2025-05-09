@@ -24,13 +24,25 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/**
+ * Extend course navigations to add the plugin's JS and CSS files in course conext
+ * @param $navigation
+ * @param $course
+ * @param $context
+ * @throws \core\exception\coding_exception
+ * @throws dml_exception
+ */
 function local_numicon_extend_navigation_course($navigation, $course, $context)
 {
-
     global $PAGE;
     $config = get_config('local_numicon');
+    $config = [
+        $config->regex,
+        $config->section,
+        $config->activity,
+        $config->icon];
 
-    $PAGE->requires->js_call_amd('local_numicon/index', 'init', [$config->section, $config->activity, $config->icon]);
+    $PAGE->requires->js_call_amd('local_numicon/index', 'init', $config);
     $PAGE->requires->css('/local/numicon/style.css');
 
 }

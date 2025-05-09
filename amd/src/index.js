@@ -25,11 +25,10 @@
 
 define(['jquery'], function($) {
     return {
-        init: function (section = true, activity = true, icon = 'fa-square') {
+        init: function (regex, section = true, activity = true, icon = 'fa-square') {
 
             const addNumIcon = function(classes) {
                 document.querySelectorAll(classes).forEach(el => {
-                    const regex = /(\d*?)\.\s*(.*)/;
                     const match = el.textContent.trim().match(regex);
                     if (match) {
                         el.innerHTML = `<div class="text-center numicon-container">
@@ -43,7 +42,7 @@ define(['jquery'], function($) {
 
             let classes = [];
             if (section) {
-                classes.push('.panel-title.sectionheading, [data-for="section_title"].courseindex-link');
+                classes.push('.sectionname, .sectionheading, [data-for="section_title"].courseindex-link');
             }
             if (activity) {
                 classes.push('.instancename, [data-for="cm_name"].courseindex-link');
@@ -54,7 +53,7 @@ define(['jquery'], function($) {
                 const observer = new MutationObserver(() => {
                     addNumIcon(classes);
                 });
-                observer.observe(document.querySelectorAll('.courseindex'), { childList: true, subtree: true });
+                observer.observe(document.querySelector('.courseindex'), { childList: true, subtree: true });
             });
 
         }
