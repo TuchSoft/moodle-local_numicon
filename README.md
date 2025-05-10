@@ -63,8 +63,6 @@ Provide a **meaningful description** with relevant information to help us unders
 
 ### Screenshot
 
-**Square icon**
-![Screenshot Square](https://raw.githubusercontent.com/TuchSoft/moodle-local_numicon/refs/heads/master/.moodle_plugin/screenshot/tuchsoft_local_numicon_square_icon_screenshot.png)
+* **Square icon** ![Screenshot Square](https://raw.githubusercontent.com/TuchSoft/moodle-local_numicon/refs/heads/master/.moodle_plugin/screenshot/tuchsoft_local_numicon_square_icon_screenshot.png)
 
-**Circle icon**
-![Screenshot Circle](https://raw.githubusercontent.com/TuchSoft/moodle-local_numicon/refs/heads/master/.moodle_plugin/screenshot/tuchsoft_local_numicon_circle_icon_screenshot.png)
+* **Circle icon** ![Screenshot Circle](https://raw.githubusercontent.com/TuchSoft/moodle-local_numicon/refs/heads/master/.moodle_plugin/screenshot/tuchsoft_local_numicon_circle_icon_screenshot.png)

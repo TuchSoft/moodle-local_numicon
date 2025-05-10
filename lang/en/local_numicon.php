@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
 /**
  * Course number icon filter - A simple JS based filter to turn number into icon in section,course and activity title
  *

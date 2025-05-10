@@ -5,7 +5,7 @@
   **Descriptions:**
     * [x] Short description written (English).
     * [x] Complete description written (English).
-    * [x] Consistency verified between short description, complete description, and README.
+    * [x] README
   **Moodle Versions:**
     * [ ] Compatibility checked with all supported Moodle versions.
   **Repository Name:**
@@ -13,79 +13,66 @@
   **URLs:**
     * [x] Public repository available.
     * [x] Bug tracker available
-    * [ ] Documentation available
+    * [-] Documentation available (if needed)
     * [ ] Website available
   **Screenshots:**
-    * [ ] At least one illustrative screenshot of the plugin in action included.
+    * [x] At least one illustrative screenshot of the plugin in action included.
   **License:**
-    * [ ] Verified that all core files have GPL v3+ license.
-    * [ ] Compatibility of licenses for any external libraries verified.
-    * [ ] No binary files without source code present.
-  **Intellectual Property:**
-    * [ ] Ensured that you have all necessary rights for plugin publication.
-  **Subscription/Credentials (if required):**
-    * [ ] Any subscription or credential requirements clearly indicated.
-    * [ ] A working demo provided (if applicable).
+    * [x] Standard boilerplate with GPL license added at the beginning of each PHP file.
+    * [x] Compatibility of licenses for any external libraries verified.
+    * [-] No binary files without source code present.
+    * [x] Ensured that you have all necessary rights for plugin publication.
+    * [x] `@copyright` tag added at the beginning of files with your name (and references if reusing others' code).
 
 **Installation and Dependencies**
 
   **Installation:**
     * [ ] Plugin installation from ZIP file tested.
-    * [ ] Any extra installation steps clearly documented.
+    * [ ] Plugin installation during site install tested.
+    * [-] Any extra installation steps clearly documented.
   **Dependencies:**
-    * [ ] Dependencies (other plugins, external libraries, system requirements) clearly indicated in the description, README, and `version.php`.
-    * [ ] Avoided the use of Composer for dependency management (Moodle guidelines).
+    * [-] Dependencies (other plugins, external libraries, system requirements) clearly indicated in the description, README, and `version.php`.
+    * [x] Avoided the use of Composer for dependency management (Moodle guidelines).
 
 **Functionality and Coding Style**
 
   **Functionality:**
-    * [ ] Plugin tested with Moodle debugging enabled at the "DEVELOPER" level.
-    * [ ] Verified that there are no PHP errors of any kind during usage.
+    * [x] Plugin tested with Moodle debugging enabled at the "DEVELOPER" level with all major supported version
+    * [x] Verified that there are no PHP errors of any kind during usage.
   **Cross-DB:**
-    * [ ] Plugin tested with MySQL database.
-    * [ ] Plugin tested with PostgreSQL database.
-    * [ ] Otherwise, a valid reason provided for the lack of cross-DB compatibility.
+    * [x] Plugin use standard DB method or has been tested with all databse.
+    * [-] A valid reason is provided for the lack of cross-DB compatibility.
   **Coding Style:**
     * [ ] Ensured that the code follows Moodle coding guidelines.
-  **English in Code:**
-    * [ ] All code comments are in English.
-    * [ ] All variable names are in English.
-    * [ ] All function names are in English.
-    * [ ] Other code elements (e.g., constants) are in English.
-  **Boilerplate:**
-    * [ ] Standard boilerplate with GPL license added at the beginning of each PHP file.
-  **Copyright:**
-    * [ ] `@copyright` tag added at the beginning of files with your name (and references if reusing others' code).
-  **CSS Styles:**
-    * [ ] Namespace used for CSS selectors (e.g., `.path-mod-myplugin .element`).
-  **Namespace Collisions:**
-    * [ ] "Frankenstyle" prefix used for database tables (e.g., `block_yourname_something`).
-    * [ ] "Frankenstyle" prefix used for configuration settings.
-    * [ ] "Frankenstyle" prefix used for function names (except standard module functions).
-    * [ ] "Frankenstyle" prefix used for class names.
-    * [ ] "Frankenstyle" prefix used for constant names.
-    * [ ] "Frankenstyle" prefix used for global variable names (avoid global definitions without a prefix).
+    * [x] All code compoenents (comments, variable, function, constants, tec..)comments are in English.
+    * [-] Namespace used for CSS selectors (e.g., `.path-mod-myplugin .element`).
+    * [x] "Frankenstyle" prefix used for database tables (e.g., `block_yourname_something`).
+    * [x] "Frankenstyle" prefix used for configuration settings.
+    * [x] "Frankenstyle" prefix used for function names (except standard module functions).
+    * [x] "Frankenstyle" prefix used for class/namespace names.
+    * [x] "Frankenstyle" prefix used for gloabl constant names.
+    * [x] "Frankenstyle" prefix used for global variable names.
 
 **Configuration and Language**
 
   **Settings Storage:**
-    * [ ] Plugin settings are saved in `config_plugins`.
-    * [ ] Direct use of tables in `config` has been avoided.
-    * [ ] `get_config()` and `set_config()` functions used to manage settings.
-    * [ ] Setting names follow the convention `plugintype_pluginname/settingname`.
+    * [x] Plugin settings are managed with the config API.
+    * [x] Direct use of tables in `config` has been avoided.
+    * [x] `get_config()` and `set_config()` functions used to manage settings.
+    * [x] Setting names follow the convention `plugintype_pluginname/settingname`.
   **Strings:**
-    * [ ] `get_string()` function used for all user-visible text.
-    * [ ] Only English is directly present in the plugin code (translations go to `lang.moodle.org`).
-    * [ ] No leading or trailing spaces in strings.
-    * [ ] String file formatted as a data array (`$string['id'] = 'value';`).
-    * [ ] Concatenation, heredoc, or nowdoc not used to define strings.
-    * [ ] Titles of sections and settings are in lowercase (Moodle standard).
+    * [x] `get_string()` function used for all user-visible text.
+    * [x] Only English is directly present in the plugin code (translations go to `lang.moodle.org`).
+    * [x] No leading or trailing spaces in strings.
+    * [x] String file formatted as a data array (`$string['id'] = 'value';`).
+    * [x] Concatenation, heredoc, or nowdoc not used to define strings.
+    * [x] Titles of sections and settings are in lowercase (Moodle standard).
 
 **Privacy and Security**
 
   **Privacy:**
-    * [ ] Collection, storage, processing, or sharing of unnecessary personal data avoided.
-    * [ ] Moodle Privacy API implemented for any external integrations (especially meta-data providers).
+    * [x] Collection, storage, processing, or sharing of unnecessary personal data avoided.
+    * [-] Moodle Privacy API implemented for any external integrations (especially meta-data providers).
     * [ ] Clear information provided about the data processed in the plugin description and via the Privacy API.
   **Security:**
     * [ ] User-provided input is never trusted.
