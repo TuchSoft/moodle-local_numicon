@@ -27,7 +27,7 @@
 **Installation and Dependencies**
 
   **Installation:**
-    * [ ] Plugin installation from ZIP file tested.
+    * [x] Plugin installation from ZIP file tested.
     * [ ] Plugin installation during site install tested.
     * [-] Any extra installation steps clearly documented.
   **Dependencies:**
@@ -43,15 +43,16 @@
     * [x] Plugin use standard DB method or has been tested with all databse.
     * [-] A valid reason is provided for the lack of cross-DB compatibility.
   **Coding Style:**
-    * [ ] Ensured that the code follows Moodle coding guidelines.
+    * [x] All check from moodle-cs are green
+    * [x] All check from grunt are green
     * [x] All code compoenents (comments, variable, function, constants, tec..)comments are in English.
     * [-] Namespace used for CSS selectors (e.g., `.path-mod-myplugin .element`).
-    * [x] "Frankenstyle" prefix used for database tables (e.g., `block_yourname_something`).
+    * [-] "Frankenstyle" prefix used for database tables (e.g., `block_yourname_something`).
     * [x] "Frankenstyle" prefix used for configuration settings.
     * [x] "Frankenstyle" prefix used for function names (except standard module functions).
     * [x] "Frankenstyle" prefix used for class/namespace names.
-    * [x] "Frankenstyle" prefix used for gloabl constant names.
-    * [x] "Frankenstyle" prefix used for global variable names.
+    * [-] "Frankenstyle" prefix used for gloabl constant names.
+    * [-] "Frankenstyle" prefix used for global variable names.
 
 **Configuration and Language**
 
@@ -73,12 +74,12 @@
   **Privacy:**
     * [x] Collection, storage, processing, or sharing of unnecessary personal data avoided.
     * [-] Moodle Privacy API implemented for any external integrations (especially meta-data providers).
-    * [ ] Clear information provided about the data processed in the plugin description and via the Privacy API.
+    * [x] Clear information provided about the data processed in the plugin description and via the Privacy API.
   **Security:**
-    * [ ] User-provided input is never trusted.
-    * [ ] `required_param()` function used with the expected data type to sanitize all user input.
-    * [ ] Placeholders used in SQL queries to prevent SQL injection.
-    * [ ] `sesskey` verified before performing any action that modifies data submitted via forms.
-    * [ ] `require_login()` present in pages requiring authentication.
-    * [ ] User capabilities verified before displaying features or allowing actions.
-    * [ ] Potentially dangerous PHP functions avoided when used with user-provided data (e.g., `call_user_func()`, `eval()`, `unserialize()`).
+    * [-] User-provided input is never trusted.
+    * [-] `required_param()` function used with the expected data type to sanitize all user input.
+    * [-] Placeholders used in SQL queries to prevent SQL injection.
+    * [-] `sesskey` verified before performing any action that modifies data submitted via forms.
+    * [-] `require_login()` present in pages requiring authentication.
+    * [-] User capabilities verified before displaying features or allowing actions.
+    * [x] Potentially dangerous PHP functions avoided when used with user-provided data (e.g., `call_user_func()`, `eval()`, `unserialize()`).

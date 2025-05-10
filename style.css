@@ -22,15 +22,17 @@
  * @see https://tuchsoft.com/plugin/moodle/local_numicon <Documentations and tutorials>
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-                                           .numicon-container {
+.numicon-container {
     width: 1.1em;
-    height: 1.1em;
+    height: 100%;
     position: relative;
     display: inline-block;
 }
 
 .numicon-icon {
-    font-size: 1.1em;
+    font-size: 1.2em;
+    margin-bottom: 25%;
+    margin-top: 25%;
 }
 
 .numicon-num {
@@ -38,6 +40,7 @@
     top: 50%;left: 50%;
     transform: translate(-50%, -50%);
     font-size: .7em;
-    color: white;
+    filter: invert(100%);
     width: 100%;
+    font-weight: 650;
 }

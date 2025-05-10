@@ -13,7 +13,7 @@
 
 ## **Course number icon filter (local\_numicon) \- Moodle Plugin**
 
-Transforms leading numbers in sections and activities titles to icons.
+Transforms leading numbers in sections and activities titles into icons.
 
 ### **Description**
 

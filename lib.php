@@ -32,14 +32,17 @@
  * @throws \core\exception\coding_exception
  * @throws dml_exception
  */
-function local_numicon_extend_navigation_course($navigation, $course, $context)
-{
-    global $PAGE;
+function local_numicon_extend_navigation_course($navigation, $course, $context) {
+    global $PAGE, $USER;
+    if ($USER->editing) {
+        return;
+    }
     $config = get_config('local_numicon');
+
     $config = [
         $config->regex,
-        $config->section,
-        $config->activity,
+        $config->section == 1,
+        $config->activity == 1,
         $config->icon];
 
     $PAGE->requires->js_call_amd('local_numicon/index', 'init', $config);

@@ -13,6 +13,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * Course number icon filter - A simple JS based filter to turn number into icon in section,course and activity title
  *
@@ -22,6 +23,8 @@
  * @see https://tuchsoft.com/plugin/moodle/local_numicon <Documentations and tutorials>
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+defined('MOODLE_INTERNAL') || die();
 
 $settings = new admin_settingpage('local_numicon_settings', get_string('pluginname', 'local_numicon'));
 $ADMIN->add('filtersettings', $settings);
@@ -44,9 +47,9 @@ if ($ADMIN->fulltree) {
     $settings->add(new admin_setting_configselect('local_numicon/icon',
         new lang_string('settings:icon', 'local_numicon'),
         new lang_string('settings:icon_desc', 'local_numicon'),
-        'square', [
+        'fa-square', [
             'fa-square' => 'Sqaure',
-            'fa-circle' => 'Cirle'
+            'fa-circle' => 'Cirle',
     ]));
 
     $settings->add(new admin_setting_configtext('local_numicon/regex',

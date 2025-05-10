@@ -16,7 +16,6 @@
 
 /**
  * Course number icon filter - A simple JS based filter to turn number into icon in section,course and activity title
- * Plugin version and other meta-data are defined here.
  *
  * @package local_numicon
  * @copyright 2025 TuchSoft <https://tuchsoft.com>
@@ -24,12 +23,23 @@
  * @see https://tuchsoft.com/plugin/moodle/local_numicon <Documentations and tutorials>
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+namespace portfolio_download\privacy;
 
-defined('MOODLE_INTERNAL') || die();
+/**
+ * Privacy Provider for the local_numicon plugin.
+ */
+class provider implements
+    // This plugin does not store any data itself.
+    // It has no database tables, and it purely acts as a content filter.
+    \core_privacy\local\metadata\null_provider {
 
-$plugin->component = 'local_numicon';
-$plugin->release = '0.0.1';
-$plugin->version = 2025060803;
-$plugin->requires = 2022112800;
-$plugin->maturity = MATURITY_STABLE;
-$plugin->supported = [400, 405];
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason(): string {
+        return 'privacy:metadata';
+    }
+}

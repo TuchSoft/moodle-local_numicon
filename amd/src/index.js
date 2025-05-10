@@ -25,7 +25,7 @@
 
 define(['jquery'], function($) {
     return {
-        init: function (regex, section = true, activity = true, icon = 'fa-square') {
+        init: function (regex, section = true, activity = false, icon = 'fa-square') {
 
             const addNumIcon = function(classes) {
                 document.querySelectorAll(classes).forEach(el => {
@@ -35,7 +35,7 @@ define(['jquery'], function($) {
                                             <i class="numicon-icon fa-solid ${icon}"></i>
                                             <span class="numicon-num">${match[1]}</span>
                                         </div> 
-                                        <span class="numicon-tilte">${match[2] ? match[2].trim() : ''}</span>`;
+                                        <span class="ms-1 numicon-tilte">${match[2] ? match[2].trim() : ''}</span>`;
                     }
                 });
             };
