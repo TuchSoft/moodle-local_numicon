@@ -29,6 +29,8 @@ defined('MOODLE_INTERNAL') || die();
 $string['pluginname'] = 'Section number icon filter';
 $string['privacy:metadata'] = 'This plugin does not store personal data, nor does it export personal data to an external location.';
 
+$string['settings:activity'] = 'Enable on activity\'s title';
+$string['settings:activity_desc'] = 'Enable the number to icon transformation on activity\'s title';
 $string['settings:breadcrumb'] = 'What to do in breadcrums';
 $string['settings:breadcrumb:hide'] = 'Hide the number';
 $string['settings:breadcrumb:icon'] = 'Render the icon';
@@ -41,4 +43,5 @@ $string['settings:icon:square'] = 'Square';
 $string['settings:icon_desc'] = 'Background icon to use (square or circle)';
 $string['settings:regex'] = 'Regex';
 $string['settings:regex_desc'] = 'For advanced users only.<br> Regex to match the number: $1 = number, $2 = rest of the title';
-
+$string['settings:section'] = 'Enable on section\'s title';
+$string['settings:section_desc'] = 'Enable the number to icon transformation on section\'s title';

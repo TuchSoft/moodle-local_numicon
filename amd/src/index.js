@@ -27,6 +27,7 @@ define(['jquery'], function($) {
     return {
         init: function (regex, breadcrumb = 'hide', section = true, activity = false ) {
             const addNumIcon = function(classes) {
+                const emojiRegex = /\p{Emoji}/u;
                 const breadcrumbClass = '.breadcrumb-item > a, .breadcrumb-item > span';
                 if (breadcrumb == 'icon') {
                     classes += ','+breadcrumbClass;
@@ -35,12 +36,20 @@ define(['jquery'], function($) {
                 document.querySelectorAll(classes).forEach(el => {
                     const match = el.innerText.trim().match(regex);
                     if (match) {
+                        let icon = (match.groups && match.groups.icon ? match.groups.icon : match[1]).trim();
+                        let title = (match.groups && match.groups.title ? match.groups.title : match[2]).trim();
+                        let iconclass = 'numicon-num';
+
+                        if (emojiRegex.test(icon)) {
+                            iconclass += 'numicon-emoji';
+                        }
+
                         el.innerHTML = `<div class="text-center numicon-container">
                                             <div class="numicon-icon">
-                                                <span class="numicon-num">${match[1]}</span>
+                                                <span class="${iconclass}">${icon}</span>
                                             </div>
                                         </div> 
-                                        ${match[2] ? match[2].trim() : ''}`;
+                                        ${title}`;
                     }
                 });
 
@@ -57,17 +66,12 @@ define(['jquery'], function($) {
 
             let classes = [];
 
-            classes.push(
-                '.sectionname',
-                '.instancename',
-                '.sectionheading',
-                '[data-for="section_title"].courseindex-link',
-                'body[id^="page-course-view-section"] .page-header-headings > h1');
 
             if (section) {
                 classes.push(
                     '.sectionname',
                     '.sectionheading',
+                    '.sectionname > a',
                     '[data-for="section_title"].courseindex-link',
                     'body[id^="page-course-view-section"] .page-header-headings > h1');
             }
@@ -75,6 +79,7 @@ define(['jquery'], function($) {
             if (activity) {
                 classes.push(
                     '.instancename',
+                    '.instancename > a',
                     '[data-for="cm_name"].courseindex-link',
                     'body[id^="page-mod"] .page-header-headings > h1');
             }
