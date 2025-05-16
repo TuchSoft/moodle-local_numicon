@@ -27,7 +27,6 @@ define(['jquery'], function($) {
     return {
         init: function (regex, breadcrumb = 'hide', section = true, activity = false ) {
             const addNumIcon = function(classes) {
-                const emojiRegex = /\p{Emoji}/u;
                 const breadcrumbClass = '.breadcrumb-item > a, .breadcrumb-item > span';
                 if (breadcrumb == 'icon') {
                     classes += ','+breadcrumbClass;
@@ -35,13 +34,14 @@ define(['jquery'], function($) {
 
                 document.querySelectorAll(classes).forEach(el => {
                     const match = el.innerText.trim().match(regex);
+                    console.log(match);
                     if (match) {
                         let icon = (match.groups && match.groups.icon ? match.groups.icon : match[1]).trim();
                         let title = (match.groups && match.groups.title ? match.groups.title : match[2]).trim();
                         let iconclass = 'numicon-num';
 
-                        if (emojiRegex.test(icon)) {
-                            iconclass += 'numicon-emoji';
+                        if (isUnicodeEmoji(icon)) {
+                            iconclass += ' numicon-emoji';
                         }
 
                         el.innerHTML = `<div class="text-center numicon-container">
@@ -63,6 +63,38 @@ define(['jquery'], function($) {
                     });
                 }
             };
+
+            function isUnicodeEmoji(char) {
+                const codePoint = char.codePointAt(0);
+                return (
+                    (codePoint >= 0x1F600 && codePoint <= 0x1F64F) || // Emoticons
+                    (codePoint >= 0x1F300 && codePoint <= 0x1F5FF) || // Miscellaneous Symbols and Pictographs
+                    (codePoint >= 0x1F680 && codePoint <= 0x1F6FF) || // Transport and Map Symbols
+                    (codePoint >= 0x1F700 && codePoint <= 0x1F77F) || // Alchemical Symbols
+                    (codePoint >= 0x1F780 && codePoint <= 0x1F7FF) || // Geometric Shapes Extended
+                    (codePoint >= 0x1F800 && codePoint <= 0x1F8FF) || // Supplemental Arrows-C
+                    (codePoint >= 0x1F900 && codePoint <= 0x1F9FF) || // Supplemental Symbols and Pictographs
+                    (codePoint >= 0x1FA00 && codePoint <= 0x1FA6F) || // Chess Symbols
+                    (codePoint >= 0x1FA70 && codePoint <= 0x1FAFF) || // Symbols and Pictographs Extended-A
+                    (codePoint >= 0x2600 && codePoint <= 0x26FF) ||   // Miscellaneous Symbols (includes ⭐ at U+2B50 is outside this range)
+                    (codePoint >= 0x2700 && codePoint <= 0x27BF) ||   // Dingbats
+                    (codePoint >= 0x1F1E0 && codePoint <= 0x1F1FF) || // Regional Indicator Symbols (for flags)
+                    (codePoint >= 0x1F200 && codePoint <= 0x1F2FF) || // Enclosed CJK Letters and Months
+                    (codePoint >= 0x1F000 && codePoint <= 0x1F02F) || // Mahjong Tiles
+                    (codePoint >= 0x1F030 && codePoint <= 0x1F09F) || // Domino Tiles
+                    (codePoint >= 0x1F0A0 && codePoint <= 0x1F0FF) || // Playing Cards
+                    (codePoint >= 0x1F9A0 && codePoint <= 0x1F9FF) || // More Supplemental Symbols and Pictographs
+                    (codePoint >= 0x1FAD0 && codePoint <= 0x1FAD9) || // Skateboard
+                    (codePoint >= 0x1FAE0 && codePoint <= 0x1FAFF) || // Symbols and Pictographs Extended-B
+                    (codePoint >= 0x1FB00 && codePoint <= 0x1FBFF) || // Symbols for Legacy Computing
+                    (codePoint >= 0x1FC00 && codePoint <= 0x1FC9F) || // Ornamental Dingbats
+                    (codePoint >= 0x1FD00 && codePoint <= 0x1FDFF) || // Geometric Shapes Extended-A
+                    (codePoint >= 0x1FE00 && codePoint <= 0x1FEFF) || // Supplemental Punctuation
+                    (codePoint >= 0x1FF00 && codePoint <= 0x1FFFD) ||   // Symbols and Pictographs Extended-C
+                    (codePoint >= 0x2B50 && codePoint <= 0x2B50)     // Black Medium Star ⭐
+                    // ... and potentially more ranges
+                );
+            }
 
             let classes = [];
 

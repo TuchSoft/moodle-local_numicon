@@ -114,4 +114,4 @@ Screenshot of the plugin in action, with theme "Boost" and "Custom section/Topic
 * **Section view** ![Section view Screenshot](https://raw.githubusercontent.com/TuchSoft/moodle-local_numicon/refs/heads/main/.moodle_plugin/screenshot/tuchsoft_local_numicon_screenshot_section_view.png)
 
 
-* **Mod view** ![Mod view Screenshot](https://raw.githubusercontent.com/TuchSoft/moodle-local_numicon/refs/heads/main/.moodle_plugin/screenshot/tuchsoft_local_numicon_screenshot_mod_view.png)
+* **Mod view** ![Mod view Screenshot](https://raw.githubusercontent.com/TuchSoft/moodle-local_numicon/refs/heads/main/.moodle_plugin/screenshot/tuchsoft_local_numicon_screenshot_activity_view.png)
