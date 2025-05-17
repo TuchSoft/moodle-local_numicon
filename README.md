@@ -27,19 +27,13 @@ By defualt the number must be the very first element of the title and followed i
 
 
 ## **Installation**
-
 1. Place the local\_numicon folder into the /local/ directory of your Moodle installation.
 2. In your Moodle site, go to *Site administration* \> *Notifications*.
 3. Complete the installation process.
-4. Navigate to *Site administration* \> *Plugins* \> *Filters* \> *Section number icon filter* to configure the plugin settings.
+4. Navigate to `Site administration` \> `Plugins` \> `Filters` \> `Section number icon filter` to configure the plugin settings.
 
 
 ## **Configuration**
-Here's an improved version of the "Configuration" section:
-
-## **Plugin Configuration**
-The plugin's settings page provides the following options:
-
 * **Enable for Sections:** Toggles the display of Numicon icons for section titles. This feature is enabled by default.
 * **Enable for Activities:** Toggles the display of Numicon icons for activity titles. **Important Note:** Activity titles are displayed in various areas within Moodle, not solely on the course page. The plugin's functionality is not guaranteed to work consistently across all these locations.
 * **Breadcrumb Title Display:** This setting allows you to control how titles are displayed within the breadcrumbs (show the icon, show the non trasformed text, hide both). Please be aware that the plugin cannot differentiate between activity and section titles in the breadcrumbs. Therefore, if a title in the breadcrumbs matches the configured format, it will be transformed regardless of the "Enable for Activities" and "Enable for Sections" settings (unless both are disabled, in which case the plugin will not modify breadcrumb titles).
@@ -61,7 +55,7 @@ You can learn more about regular expressions and test your patterns using the on
 When you're using subsections, you'll typically want to have sub-numbering as well. To achieve this, you'll need to adjust the default search regular expression.
 
 You can set the regex to "[`^#([\d\.]*)\s+(.*)`](https://regexr.com/?engine=javascript&tool=details&expression=%2F%5E%23%28%5B%5Cd%5C.%5D%2A%29%5Cs%2B%28.%2A%29%2Fgm&text=%231.2%20Section%20title%0A%231.2.3.4%20Section%20title)" to enable a numbering format like "#1.2" and "#1", allowing you to use a number after the dot.
-See [Other useful regex](other_useful_regex)
+See [Other useful regex](#other-useful-regex)
 
 
 #### **Other useful regex**

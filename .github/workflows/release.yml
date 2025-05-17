@@ -1,0 +1,79 @@
+name: Publish Moodle Plugin Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    if: github.repository_owner == 'tuchsoft'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set plugin directory name
+        id: set_plugin_name
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          PLUGIN_NAME="${REPO_NAME#moodle-}"
+          echo "PLUGIN_DIR_NAME=$PLUGIN_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Prepare artifact directory
+        run: mkdir -p build
+
+      - name: Zip plugin files
+        run: |
+          cd .
+          zip -r build/${{ steps.set_plugin_name.outputs.PLUGIN_DIR_NAME }}.zip * -x ".*"
+
+      - name: Extract release notes from changelog
+        id: extract-release-notes
+        uses: yashanand1910/standard-release-notes@v1.5.0
+        with:
+          changelog_path: CHANGELOG.md
+          version: ${{ github.ref }}
+
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ github.ref_name }}
+          artifacts: build/${{ steps.set_plugin_name.outputs.PLUGIN_DIR_NAME }}.zip
+          artifactContentType: application/zip
+          body: |
+            ${{ steps.extract-release-notes.outputs.release_notes }}
+            #
+            Take a look at the [CHANGELOG](https://tuchsoft.com/moodle-plugins/${{steps.set_plugin_name.outputs.PLUGIN_DIR_NAME}}/releases) for details about other releases.
+
+      - name: Publish to Moodle Plugins (if token is available)
+        if: ${{ secrets.MOODLE_ORG_TOKEN }}
+        env:
+          PLUGIN: ${{ steps.set_plugin_name.outputs.PLUGIN_DIR_NAME }}
+          CURL: curl -s
+          ENDPOINT: https://moodle.org/webservice/rest/server.php
+          TOKEN: ${{ secrets.MOODLE_ORG_TOKEN }}
+          FUNCTION: local_plugins_add_version
+          TAGNAME: ${{ github.ref_name }}
+          ZIPURL: ${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/${{ steps.set_plugin_name.outputs.PLUGIN_DIR_NAME }}.zip
+          VCSREPOSITORYURL: ${{ github.server_url }}/${{ github.repository }}
+          CHANGELOGURL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGELOG.md
+        run: |
+          RESPONSE=$(${CURL} "${ENDPOINT}" \
+            -d "wstoken=${TOKEN}" \
+            -d "wsfunction=${FUNCTION}" \
+            -d "moodlewsrestformat=json" \
+            -d "frankenstyle=${PLUGIN}" \
+            -d "zipurl=${ZIPURL}" \
+            -d "vcssystem=git" \
+            -d "vcsrepositoryurl=${VCSREPOSITORYURL}" \
+            -d "vcstag=${TAGNAME}" \
+            -d "changelogurl=${CHANGELOGURL}" \
+            -d "altdownloadurl=${ZIPURL}"
+          )
+          echo "Moodle Plugins API Response: ${RESPONSE}"
