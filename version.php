@@ -28,8 +28,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_numicon';
-$plugin->release = '0.0.1';
-$plugin->version = 2025060804;
+$plugin->release = '0.9.0';
+$plugin->version = 2025052600;
 $plugin->requires = 2022112800;
-$plugin->maturity = MATURITY_STABLE;
+$plugin->maturity = MATURITY_BETA;
 $plugin->supported = [400, 405];
