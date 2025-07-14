@@ -67,8 +67,14 @@ See [Other useful regex](#other-useful-regex)
 * **Capturing the last token** you can use the last token instead of the first one to diaply the icon using named capture groups, (keep in mind that the icon will always be place at the beginning regardles of wherte the token is extracted from the text) you can use something like this "[`(?<title>.*?)\s+(?<num>\d+)$`](https://regexr.com/?engine=javascript&tool=details&expression=%2F%28%3F%3Ctitle%3E.%2A%3F%29%5Cs%2B%28%3F%3Cnum%3E%5Cd%2B%29%24%2Fgm&text=Section%201%0ASection%20418%0A)";
 * **Default** the defualt regex is "[`^(\d*?)\.\s*(.*)`](https://regexr.com/?engine=javascript&tool=details&expression=%2F%5E%28%5Cd%2A%3F%29%5C.%5Cs%2A%28.%2A%29%2Fgm&text=1.%20Section%20title%0A10.%20Section%20title)"
 
+### **Emoji**
+The plugin provides built-in support for displaying Unicode emojis. A comprehensive list of supported emojis can be found at Unicode emoji full list.
+These emojis are rendered in their original colors regardless of the context in which they appear. The CSS class .numicon-emoji controls this styling; see the styles section for more details.
 
-#### **Styles**
+
+
+
+### **Styles**
 This plugin employs basic Bootstrap styling to generate the badges, and it intelligently inherits text colors from the surrounding elements.
 
 The badge's background color will automatically match the color of the title text. The number displayed within the icon will have its color inverted to ensure good contrast: it will appear black on light backgrounds and white on dark backgrounds.
@@ -78,6 +84,7 @@ For more advanced customization of the badge appearance, you can easily apply yo
 * `.numicon-container`: This class controls the positioning of the badge.
 * `.numicon-icon`: This class styles the actual circular badge element.
 * `.numicon-num`: This class styles the number text displayed inside the badge.
+* `.numicon-emoji`: Applied to all detected emoji character to rever the color filter nomrally applied to text element inside the badge.
 
 By adding or modifying CSS rules for these classes in your site's custom CSS, you have full control over the visual presentation of the icons.
 

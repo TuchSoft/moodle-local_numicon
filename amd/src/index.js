@@ -31,10 +31,8 @@ define(['jquery'], function($) {
                 if (breadcrumb == 'icon') {
                     classes += ','+breadcrumbClass;
                 }
-
                 document.querySelectorAll(classes).forEach(el => {
                     const match = el.innerText.trim().match(regex);
-                    console.log(match);
                     if (match) {
                         let icon = (match.groups && match.groups.icon ? match.groups.icon : match[1]).trim();
                         let title = (match.groups && match.groups.title ? match.groups.title : match[2]).trim();
@@ -64,7 +62,7 @@ define(['jquery'], function($) {
                 }
             };
 
-            function isUnicodeEmoji(char) {
+            const isUnicodeEmoji = function (char) {
                 const codePoint = char.codePointAt(0);
                 return (
                     (codePoint >= 0x1F600 && codePoint <= 0x1F64F) || // Emoticons
@@ -76,7 +74,7 @@ define(['jquery'], function($) {
                     (codePoint >= 0x1F900 && codePoint <= 0x1F9FF) || // Supplemental Symbols and Pictographs
                     (codePoint >= 0x1FA00 && codePoint <= 0x1FA6F) || // Chess Symbols
                     (codePoint >= 0x1FA70 && codePoint <= 0x1FAFF) || // Symbols and Pictographs Extended-A
-                    (codePoint >= 0x2600 && codePoint <= 0x26FF) ||   // Miscellaneous Symbols (includes ⭐ at U+2B50 is outside this range)
+                    (codePoint >= 0x2600 && codePoint <= 0x26FF) ||   // Miscellaneous Symbols
                     (codePoint >= 0x2700 && codePoint <= 0x27BF) ||   // Dingbats
                     (codePoint >= 0x1F1E0 && codePoint <= 0x1F1FF) || // Regional Indicator Symbols (for flags)
                     (codePoint >= 0x1F200 && codePoint <= 0x1F2FF) || // Enclosed CJK Letters and Months
@@ -91,7 +89,7 @@ define(['jquery'], function($) {
                     (codePoint >= 0x1FD00 && codePoint <= 0x1FDFF) || // Geometric Shapes Extended-A
                     (codePoint >= 0x1FE00 && codePoint <= 0x1FEFF) || // Supplemental Punctuation
                     (codePoint >= 0x1FF00 && codePoint <= 0x1FFFD) ||   // Symbols and Pictographs Extended-C
-                    (codePoint >= 0x2B50 && codePoint <= 0x2B50)     // Black Medium Star ⭐
+                    (codePoint >= 0x2B50 && codePoint <= 0x2B50)     // Black Medium Star
                     // ... and potentially more ranges
                 );
             }

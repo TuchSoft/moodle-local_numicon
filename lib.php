@@ -26,9 +26,9 @@
 
 /**
  * Extend course navigations to add the plugin's JS and CSS files in course conext
- * @param $navigation
- * @param $course
- * @param $context
+ * @param navigation_node $navigation The navigation node to extend
+ * @param stdClass $course The course to object for the tool
+ * @param context $context The context of the course
  * @throws \core\exception\coding_exception
  * @throws dml_exception
  */

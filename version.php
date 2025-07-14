@@ -16,7 +16,6 @@
 
 /**
  * Section number icon filter - A simple JS based filter to turn number into icon in section,course and activity title
- * Plugin version and other meta-data are defined here.
  *
  * @package local_numicon
  * @copyright 2025 TuchSoft <https://tuchsoft.com>
@@ -28,8 +27,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_numicon';
-$plugin->release = '0.9.0';
-$plugin->version = 2025052600;
+$plugin->release = '0.9.1';
+$plugin->version = 2025071400;
 $plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_BETA;
 $plugin->supported = [400, 405];
