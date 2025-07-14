@@ -109,3 +109,23 @@ Screenshot of the plugin in action, with theme "Boost" and "Custom section/Topic
 
 
 * **Mod view** ![Mod view Screenshot](https://raw.githubusercontent.com/TuchSoft/moodle-local_numicon/refs/heads/main/.moodle_plugin/screenshots/tuchsoft_local_numicon_screenshot_activity_view.png)
+
+
+## Author
+
+👤 **Mattia Bonzi <mattia@tuchsoft.com>**
+
+* Website: [tuchsoft.com](https://tuchsoft.com)
+* Github: [@tuchsoft](https://github.com/tuchsoft)
+
+[![TuchSoft logo](https://tuchsoft.com/assets/images/logo-dark.webp)](https://tuchsoft.com)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check [issues page](github.com/tuchsoft/moodle-local_numicon/issues). 
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
