@@ -92,7 +92,7 @@ define(['jquery'], function($) {
                     (codePoint >= 0x2B50 && codePoint <= 0x2B50)     // Black Medium Star
                     // ... and potentially more ranges
                 );
-            }
+            };
 
             let classes = [];
 
