@@ -4,14 +4,17 @@
 </p>
 
 <p align="center">
-    <a href="https://twitter.com/tuchsoft"><img src="https://badgen.net/badge/twitter/@tuchsoft/?icon&label" /></a>
-    <a href="https://tuchsoft.com"><img src="https://badgen.net/badge/icon/tuchsoft.com/?icon=chrome&label" /></a>
+<a href="https://twitter.com/tuchsoft"><img src="https://badgen.net/badge/twitter/@tuchsoft/?icon&label" /></a>
+<a href="https://tuchsoft.com"><img src="https://badgen.net/badge/icon/tuchsoft.com/?icon=chrome&label" /></a>
 <a href="https://github.com/tuchsoft/"><img src="https://badgen.net/static/GitHub/Tuchsoft/?icon=github&label" /></a>
     
     
 </p>
 
 # **Section number icon filter (local\_numicon) \- Moodle Plugin**
+
+[![ci](https://github.com/TuchSoft/moodle-local_numicon/actions/workflows/build.yml/badge.svg)](https://github.com/TuchSoft/moodle-local_numicon/actions/workflows/build.yml)
+
 Transforms leading numbers in sections and activities titles into icons.
 
 ![Section number icon filter poster](https://raw.githubusercontent.com/TuchSoft/moodle-local_numicon/refs/heads/main/.moodle_plugin/tuchsoft_local_numicon_poster.png)
@@ -131,7 +134,7 @@ Screenshot of the plugin in action, with theme "Boost" and "Custom section/Topic
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check [issues page](github.com/tuchsoft/moodle-local_numicon/issues). 
+Feel free to check [issues page](https://github.com/tuchsoft/moodle-local_numicon/issues). 
 
 ## Show your support
 
