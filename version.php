@@ -31,4 +31,4 @@ $plugin->release = '0.9.1';
 $plugin->version = 2025071400;
 $plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_BETA;
-$plugin->supported = [400, 405];
+$plugin->supported = [400, 500];
